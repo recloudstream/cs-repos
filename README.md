@@ -1,5 +1,5 @@
 # cs-repos
-Official Cloudstream repositories
+Community Cloudstream repositories
 
 Click to add to your app.
 
