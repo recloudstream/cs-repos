@@ -1,7 +1,8 @@
 [
     "https://raw.githubusercontent.com/recloudstream/cloudstream-extensions/builds/repo.json",
     "https://raw.githubusercontent.com/recloudstream/cloudstream-extensions-multilingual/builds/repo.json",
-    "https://raw.githubusercontent.com/recloudstream/cs-repos/master/test.json",
     "https://raw.githubusercontent.com/ImZaw/cloudstream-extensions-arabic/builds/repo.json",
-    "https://raw.githubusercontent.com/Jacekun/cs3xxx-repo/main/repo.json"
+    "https://raw.githubusercontent.com/Jacekun/cs3xxx-repo/main/repo.json",
+    "https://raw.githubusercontent.com/recloudstream/cs-repos/master/test.json",
+    "https://raw.githubusercontent.com/C10udburst/cloudstream-misc/builds/repo.json"
 ]
