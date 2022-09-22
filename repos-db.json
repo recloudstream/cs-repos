@@ -7,7 +7,8 @@
         "url": "https://raw.githubusercontent.com/recloudstream/cloudstream-extensions-multilingual/builds/repo.json",
         "verified": true
     },
+    "https://raw.githubusercontent.com/hexated/cloudstream-extensions-hexated/builds/repo.json",
     "https://raw.githubusercontent.com/ImZaw/cloudstream-extensions-arabic/builds/repo.json",
-    "https://raw.githubusercontent.com/Jacekun/cs3xxx-repo/main/repo.json",
-    "https://raw.githubusercontent.com/hexated/cloudstream-extensions-hexated/builds/repo.json"
+    "https://raw.githubusercontent.com/Jacekun/cs3xxx-repo/main/repo.json"
+    
 ]
