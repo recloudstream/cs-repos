@@ -55,4 +55,4 @@ if __name__ == "__main__":
             print("\n")
         raise SystemExit(1)
     else:
-        update_rentry(res)
+        write_markdown(res)
