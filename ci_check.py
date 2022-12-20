@@ -1,4 +1,5 @@
 from ftplib import error_reply
+from create_markdown import write_markdown
 import httpx
 import asyncio
 import json
@@ -25,6 +26,8 @@ async def check_repo(url):
         assert data['manifestVersion']
         results = await asyncio.gather(*[check_plugin_list(pl_url, client) for pl_url in data['pluginLists']], return_exceptions=True)
         errors.extend([(data['pluginLists'][i],r) for i, r in enumerate(results) if isinstance(r,Exception)])
+        data['url'] = url
+        return data
         
 async def check_all():
     urls = []
@@ -41,12 +44,15 @@ async def check_all():
             errors.append(['repos-db.json', ex])
     results = await asyncio.gather(*[check_repo(url) for url in urls], return_exceptions=True)
     errors.extend([(urls[i],r) for i, r in enumerate(results) if isinstance(r,Exception)])
+    return results
     
 if __name__ == "__main__":
-    asyncio.run(check_all())
+    res = asyncio.run(check_all())
     if len(errors) > 0:
         for url, error in errors:
             print(f"Error in {url}:")
             traceback.print_exception(error)
             print("\n")
         raise SystemExit(1)
+    else:
+        update_rentry(res)
