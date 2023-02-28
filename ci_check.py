@@ -1,4 +1,3 @@
-from ftplib import error_reply
 from create_markdown import write_markdown
 import httpx
 import asyncio
@@ -8,11 +7,11 @@ import traceback
 errors = []
 
 async def check_plugin_item(url, client):
-    r = await client.head(url)
+    r = await client.head(url, allow_redirects=True)
     assert r.status_code == 200
 
 async def check_plugin_list(url, client):
-    r = await client.get(url)
+    r = await client.get(url, allow_redirects=True)
     data = r.json()
     results = await asyncio.gather(*[check_plugin_item(plugin['url'], client) for plugin in data], return_exceptions=True)
     errors.extend([(data[i]['url'],r) for i, r in enumerate(results) if isinstance(r,Exception)])
@@ -20,7 +19,7 @@ async def check_plugin_list(url, client):
 
 async def check_repo(url):
     async with httpx.AsyncClient() as client:
-        r = await client.get(url)
+        r = await client.get(url, allow_redirects=True)
         data = r.json()
         assert data['name']
         assert data['manifestVersion']
