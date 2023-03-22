@@ -1,13 +1,13 @@
 [
     {
-        "url": "https://raw.githubusercontent.com/recloudstream/cloudstream-extensions/builds/repo.json",
+        "url": "https://cdn.discordapp.com/attachments/1087878495432097903/1088176990844112937/nBbRWkp.json",
         "verified": true
     },
     {
-        "url": "https://raw.githubusercontent.com/recloudstream/cloudstream-extensions-multilingual/builds/repo.json",
+        "url": "https://cdn.discordapp.com/attachments/1087878495432097903/1088177467577073826/Z1v23CQ.json",
         "verified": true
     },
-    "https://raw.githubusercontent.com/hexated/cloudstream-extensions-hexated/builds/repo.json",
+    "https://cdn.discordapp.com/attachments/1010297805128077425/1087942375378264074/hexated-repo.json",
     "https://raw.githubusercontent.com/yoyzo/arab/builds/repo.json",
     "https://raw.githubusercontent.com/Jacekun/cs3xxx-repo/main/repo.json",
     "https://raw.githubusercontent.com/daarkdemon/cs-darkdemon-extensions/builds/repo.json",
