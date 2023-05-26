@@ -7,6 +7,10 @@
         "url": "https://cdn.discordapp.com/attachments/737729263221997619/1090577000336457738/GK88K7J.json",
         "verified": true
     },
+    {
+        "url": "https://raw.githubusercontent.com/recloudstream/extensions/master/repo.json",
+        "verified": true
+    },
     "https://cdn.discordapp.com/attachments/1010297805128077425/1087942375378264074/hexated-repo.json",
     "https://cdn.discordapp.com/attachments/737729263221997619/1090579827007946783/vyfjVje.json",
     "https://codeberg.org/Stormunblessed/storm-ext/raw/branch/main/kronch.json",
