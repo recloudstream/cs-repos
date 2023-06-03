@@ -1,16 +1,10 @@
 [
     {
-        "url": "https://codeberg.org/cloudstream/cloudstream-extensions/raw/branch/builds/repo.json",
-        "verified": true
-    },
-    {
-        "url": "https://codeberg.org/cloudstream/cloudstream-extensions-multilingual/raw/branch/builds/repo.json",
-        "verified": true
-    },
-    {
         "url": "https://raw.githubusercontent.com/recloudstream/extensions/master/repo.json",
         "verified": true
     },
+    "https://codeberg.org/cloudstream/cloudstream-extensions/raw/branch/builds/repo.json",
+    "https://codeberg.org/cloudstream/cloudstream-extensions-multilingual/raw/branch/builds/repo.json",
     "https://codeberg.org/cloudstream/cloudstream-extensions-hexated/raw/branch/builds/repo.json",
     "https://codeberg.org/cloudstream/likdev256-tamil-providers/raw/branch/builds/repo.json",
     "https://codeberg.org/Stormunblessed/storm-ext/raw/branch/main/kronch.json",
