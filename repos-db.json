@@ -1,4 +1,4 @@
-[
+
     {
         "url": "https://raw.githubusercontent.com/recloudstream/extensions/master/repo.json",
         "verified": true
@@ -16,6 +16,6 @@
     "https://raw.githubusercontent.com/AirbnbEcoPlus/frencharchive/master/repo.json",
     "https://codeberg.org/cloudstream/cloudstream-extensions-horis/raw/branch/master/repo.json",
     "https://codeberg.org/7TE/FStream/raw/branch/build/repo.json",
-    "https://techtanic.xyz/cs3ss"
+    "https://techtanic.xyz/cs3ss",
     "https://raw.githubusercontent.com/KillerDogeEmpire/dsh-extension-reboot/builds/repo.json"
 ]
