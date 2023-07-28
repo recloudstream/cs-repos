@@ -6,6 +6,14 @@ import traceback
 
 errors = []
 
+class JSONWithCommentsDecoder(json.JSONDecoder):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+
+    def decode(self, s: str):
+        s = '\n'.join(l if not l.lstrip().startswith('//') else '' for l in s.split('\n'))
+        return super().decode(s)
+
 async def check_plugin_item(url, client):
     r = await client.head(url)
     assert r.status_code == 200
@@ -30,7 +38,7 @@ async def check_repo(url):
         
 async def check_all():
     urls = []
-    for entry in json.load(open("repos-db.json")):
+    for entry in json.load(open("repos-db.json"), cls=JSONWithCommentsDecoder):
         try:
             url = ""
             if isinstance(entry, str):
