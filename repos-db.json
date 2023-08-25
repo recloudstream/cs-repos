@@ -3,6 +3,8 @@
         "url": "https://raw.githubusercontent.com/recloudstream/extensions/master/repo.json",
         "verified": true
     },
+    "https://raw.githubusercontent.com/self-similarity/MegaRepo/builds/repo.json",
+    "https://raw.githubusercontent.com/CranberrySoup/AniyomiCompatExtension/master/repo.json",
     "https://codeberg.org/cloudstream/cloudstream-extensions/raw/branch/builds/repo.json",
     "https://codeberg.org/cloudstream/cloudstream-extensions-multilingual/raw/branch/builds/repo.json",
     "https://codeberg.org/cloudstream/cloudstream-extensions-hexated/raw/branch/builds/repo.json",
@@ -15,6 +17,5 @@
     "https://codeberg.org/cloudstream/cloudstream-extensions-horis/raw/branch/master/repo.json",
     "https://codeberg.org/7TE/FStream/raw/branch/build/repo.json",
     "https://techtanic.xyz/cs3ss",
-    "https://raw.githubusercontent.com/KillerDogeEmpire/avocado-extensions/builds/repo.json",
-    "https://raw.githubusercontent.com/self-similarity/MegaRepo/builds/repo.json"
+    "https://raw.githubusercontent.com/KillerDogeEmpire/avocado-extensions/builds/repo.json"
 ]
