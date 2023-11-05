@@ -4,7 +4,7 @@ PREAMBLE = """# Cloudstream 3 Repositories
     This means you should treat them with the same level of scrutiny you treat any apps. Extensions can also read all of the Cloudstream's data.
 	The first repo is constantly audited by the app developers so you can probably trust it.
 
-Click to install
+!!! info Click on Repository Name to Install
 
 """
 
