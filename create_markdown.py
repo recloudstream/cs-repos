@@ -15,5 +15,5 @@ def ch_schema(url):
 def write_markdown(repos):
     text = PREAMBLE
     for repo in repos:
-        text += f"- [{repo['name']}]({ch_schema(repo['url'])})\n"
+        text += f"- [{repo['name']}]({ch_schema(repo['url'])}) | `{repo['description']}`\n\n"
     open("list.md","w+",encoding='utf-8').write(text)
