@@ -1,0 +1,19 @@
+{
+    "name": "Prothots",
+    "version": "1.0",
+    "description": "Provider for Prothots.com",
+    "url": "https://prothots.com",
+    "sources": [
+        {
+            "url": "https://prothots.com/api/videos",
+            "type": "json",
+            "headers": {
+                "User-Agent": "YourUserAgent"
+            },
+            "parse": {
+                "title": "video_title",
+                "url": "video_url"
+            }
+        }
+    ]
+}
