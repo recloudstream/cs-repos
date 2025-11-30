@@ -1,0 +1,99 @@
+package com.shahidfuryu
+
+import com.lagradost.cloudstream3.*
+import com.lagradost.cloudstream3.utils.ExtractorLink
+import com.lagradost.cloudstream3.utils.loadExtractor
+import org.jsoup.nodes.Element
+
+class ShahidFuryuProvider : MainAPI() {
+    override var mainUrl = "https://shahidfuryu.net"
+    override var name = "Shahid4U"
+    override val hasMainPage = true
+    override var lang = "ar"
+    override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
+
+    override val mainPage = mainPageOf(
+        "$mainUrl/movies/page/" to "أفلام",
+        "$mainUrl/series/page/" to "مسلسلات",
+        "$mainUrl/netflix/page/" to "نتفليكس"
+    )
+
+    override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
+        val url = request.data + page
+        val doc = app.get(url).document
+        val home = doc.select("div.MediaGrid div.MediaItem").mapNotNull {
+            toSearchResult(it)
+        }
+        return newHomePageResponse(request.name, home)
+    }
+
+    private fun toSearchResult(element: Element): SearchResponse? {
+        val title = element.select("a.Title").text()
+        val href = element.select("a.Title").attr("href")
+        val posterUrl = element.select("img").attr("data-src").ifEmpty { element.select("img").attr("src") }
+        
+        return if (href.contains("series") || href.contains("season")) {
+            newTvSeriesSearchResponse(title, href, TvType.TvSeries) {
+                this.posterUrl = posterUrl
+            }
+        } else {
+            newMovieSearchResponse(title, href, TvType.Movie) {
+                this.posterUrl = posterUrl
+            }
+        }
+    }
+
+    override suspend fun search(query: String): List<SearchResponse> {
+        val url = "$mainUrl/?s=$query"
+        val doc = app.get(url).document
+        return doc.select("div.MediaGrid div.MediaItem").mapNotNull {
+            toSearchResult(it)
+        }
+    }
+
+    override suspend fun load(url: String): LoadResponse {
+        val doc = app.get(url).document
+        val title = doc.select("h1.Title").text()
+        val poster = doc.select("div.Poster img").attr("data-src")
+        val desc = doc.select("div.Description").text()
+        val year = doc.select("div.Year").text().toIntOrNull()
+        
+        // التحقق مما إذا كان مسلسلاً لجلب الحلقات
+        if (url.contains("series") || url.contains("season")) {
+            val episodes = doc.select("div.Episodes a").map {
+                Episode(
+                    it.attr("href"),
+                    it.text(),
+                    season = null,
+                    episode = it.text().filter { char -> char.isDigit() }.toIntOrNull()
+                )
+            }
+            return newTvSeriesLoadResponse(title, url, TvType.TvSeries, episodes) {
+                this.posterUrl = poster
+                this.plot = desc
+                this.year = year
+            }
+        } else {
+            return newMovieLoadResponse(title, url, TvType.Movie, url) {
+                this.posterUrl = poster
+                this.plot = desc
+                this.year = year
+            }
+        }
+    }
+
+    override suspend fun loadLinks(
+        data: String,
+        isCasting: Boolean,
+        subtitleCallback: (SubtitleFile) -> Unit,
+        callback: (ExtractorLink) -> Unit
+    ): Boolean {
+        val doc = app.get(data).document
+        // استخراج روابط المشاهدة (Watch Servers)
+        doc.select(".WatchServers li").forEach { server ->
+            val serverUrl = server.attr("data-link") // أو التعديل حسب كود الموقع
+            loadExtractor(serverUrl, data, subtitleCallback, callback)
+        }
+        return true
+    }
+}
