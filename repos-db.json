@@ -9,7 +9,6 @@
     "https://raw.githubusercontent.com/Gian-Fr/ItalianProvider/builds/repo.json",
     "https://raw.githubusercontent.com/CakesTwix/cloudstream-extensions-uk/master/repo.json",
     "https://raw.githubusercontent.com/techtanic/SkillShare-Repo/builds/repo.json",
-    "https://raw.githubusercontent.com/maarrem/cs-Kekik/master/repo.json",
     "https://raw.githubusercontent.com/SaurabhKaperwan/CSX/builds/CS.json",
     "https://git.disroot.org/ayza/FStream/raw/branch/main/repo.json",
     "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/refs/heads/builds/repo.json",
@@ -29,4 +28,5 @@
     "https://raw.githubusercontent.com/rockhero1234/cinephile/refs/heads/builds/repo.json",
     "https://raw.githubusercontent.com/Sushan64/NetMirror-Extension/refs/heads/builds/Netflix.json"
 ]
+
 
