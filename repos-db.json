@@ -36,5 +36,7 @@
     "https://cs.eclipsia.dpdns.org/repo.json",
     "https://github.com/aslafy-z/cloudstream-plugins/releases/download/catalog-stable/repo.json",
     "https://raw.githubusercontent.com/sagemoon1996/cloudstream-repo/builds/repo.json",
+    "https://raw.githubusercontent.com/dipender98/Indflix/main/repo.json",
+    "https://raw.githubusercontent.com/F0Rextasy/bigbullapp-cs/master/repo.json",
     "https://raw.githubusercontent.com/Mamun015/mamun015-cloudstream-bdix/master/repo.json"
 ]
